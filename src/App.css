@@ -1,0 +1,733 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fafafa;
+  color: #333;
+}
+/* This stops the sticky navbar from hiding section titles when clicked */
+section {
+  scroll-margin-top: 100px; 
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background-color: #111;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Stacked Logo Container */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the text right under the pepper */
+  cursor: pointer;
+}
+
+.logo img {
+  height: 70px; /* Slightly smaller so the navbar doesn't get too tall */
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+  transform: scale(1.05); /* The chili still pops when hovered! */
+}
+
+/* The stylish Dhanilanka text */
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  color: #ff4757;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  margin-top: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff4757;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 8%;
+  background-color: #111;
+  color: white;
+  min-height: 80vh;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #ff4757;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 40px;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.hero-buttons button {
+  padding: 15px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 15px;
+  transition: transform 0.2s ease;
+}
+
+.hero-buttons button:hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  background-color: #ff4757;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white !important;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 80%;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Floating animation for the hero image */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 8%;
+  background-color: #fff;
+  margin-top: -50px;
+  position: relative;
+  z-index: 10;
+}
+
+.feature-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+  flex: 1;
+}
+
+.feature-box h3 {
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.feature-box p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Menu Section */
+.menu-section {
+  padding: 80px 8%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #111;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.menu-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.menu-card:hover {
+  transform: translateY(-10px);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.card-info {
+  padding: 20px;
+}
+
+.card-info h3 {
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.card-info p {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.price {
+  font-weight: bold;
+  color: #ff4757;
+  font-size: 1.2rem;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 80px 8%;
+  background-color: #111;
+  color: white;
+  text-align: center;
+}
+
+.testimonials .section-title {
+  color: white;
+}
+
+.review-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #222;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.stars {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.review-card p {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.review-card h4 {
+  color: #ff4757;
+}
+
+/* Footer */
+.footer {
+  background-color: #000;
+  color: #ccc;
+  padding: 60px 8% 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  color: #ff4757; 
+  margin-bottom: 20px;
+  font-size: 2.2rem; /* Increased size */
+  font-family: 'Playfair Display', serif; /* Matches the navbar font */
+  letter-spacing: 1px;
+}
+
+.footer-section p {
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 0.9rem;
+}
+/* Ambiance Parallax Section */
+.ambiance-section {
+  /* Links to your neon exterior photo */
+  background-image: url('/assets/exterior.png'); 
+  background-size: cover;
+  background-position: center;
+  /* This single line creates the parallax effect! */
+  background-attachment: fixed; 
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 50px;
+}
+
+.ambiance-overlay {
+  background-color: rgba(0, 0, 0, 0.65); /* Dark transparent box */
+  padding: 50px 40px;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  max-width: 700px;
+  /* Premium frosted glass blur effect */
+  backdrop-filter: blur(8px); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.ambiance-overlay h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #ff4757;
+}
+
+.ambiance-overlay p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #ddd;
+}
+/* Footer */
+.footer {
+  position: relative;
+  color: #eee; /* Brighter text for contrast */
+  padding: 80px 8% 20px;
+  /* The Magic Line: Dark gradient over the tribal wall art + Parallax */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95)), url('/assets/wall.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border-top: 4px solid #ff4757; /* A nice red accent line at the top */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+  position: relative; /* Keeps text above the background */
+  z-index: 1;
+}
+
+.footer-section h3 {
+  color: #ff4757; /* Makes the headings pop */
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.footer-section p {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.footer-section p:hover {
+  color: #fff; /* Slight brighten effect when hovering over text */
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15); /* Subtle glowing divider */
+  font-size: 0.9rem;
+  color: #999;
+  position: relative;
+  z-index: 1;
+}
+/* =========================================
+   SCROLL ANIMATIONS (The Magic Effect)
+   ========================================= */
+.hidden-animate {
+  opacity: 0;
+  transform: translateY(60px); /* Starts pushed down slightly */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.hidden-animate.show {
+  opacity: 1;
+  transform: translateY(0); /* Glides up to original position */
+}
+
+
+/* =========================================
+   NEW ABOUT SECTION (Honey Bunny Style)
+   ========================================= */
+.about-section {
+  padding: 100px 8%;
+  background-color: #fff;
+  overflow: hidden; /* Prevents animation clipping */
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* Left Side: Staggered Image Grid */
+.about-images {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  position: relative;
+}
+
+.about-images img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Gray background for cutout PNGs to match full photos */
+.bg-gray {
+  background-color: #f5f5f5;
+  object-fit: contain !important;
+  padding: 20px;
+}
+
+/* Staggering the grid up and down like a modern theme */
+.about-images .img-1 { margin-top: 40px; }
+.about-images .img-4 { margin-top: -40px; }
+
+
+/* Right Side: Text & Content */
+.about-content {
+  flex: 1;
+}
+
+.about-subtitle {
+  color: #ff4757;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.about-title {
+  font-size: 3.5rem;
+  color: #111;
+  margin-bottom: 25px;
+  line-height: 1.1;
+}
+
+.about-title span {
+  font-family: 'Playfair Display', serif;
+  color: #ff4757;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Experience Stats Counter */
+.about-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  border-left: 4px solid #ff4757;
+  padding-left: 25px;
+}
+
+.stat-box h3 {
+  font-size: 2.8rem;
+  color: #111;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 5px;
+}
+
+.stat-box p {
+  color: #666;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Mobile Responsive Fixes */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+  }
+  .about-images .img-1, .about-images .img-4 { margin-top: 0; }
+  .about-images img { height: 200px; }
+  .about-title { font-size: 2.5rem; }
+}
+/* =========================================
+   CONTACT PAGE STYLES
+   ========================================= */
+
+/* Dark Hero Banner */
+.contact-hero {
+  /* We use the tribal wall art as a dark, textured background */
+  background-image: linear-gradient(rgba(10, 15, 30, 0.8), rgba(10, 15, 30, 0.9)), url('/assets/wall.png');
+  background-size: cover;
+  background-position: center;
+  height: 35vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.contact-hero h1 {
+  font-size: 4rem;
+  letter-spacing: 2px;
+}
+
+/* Contact Main Section */
+.contact-section {
+  padding: 60px 8%;
+  text-align: center;
+  background-color: #fff;
+}
+
+.contact-header {
+  margin-bottom: 60px;
+}
+
+/* The stylized orange/red cursive subtitle with lines */
+.decorative-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: #ff9800; /* Honey Bunny orange */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.decorative-subtitle::before,
+.decorative-subtitle::after {
+  content: "";
+  height: 2px;
+  width: 40px;
+  background-color: #ff9800;
+}
+
+.contact-title {
+  font-size: 3rem;
+  color: #111a28; /* Deep navy blue */
+  font-weight: bold;
+}
+
+/* 3-Column Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-box {
+  padding: 20px;
+}
+
+.decorative-box-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: #ff9800;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.decorative-box-title::after {
+  content: "";
+  height: 2px;
+  width: 50px;
+  background-color: #ff9800;
+}
+
+.contact-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  margin-top: -3px; /* Aligns icon perfectly with the text */
+}
+
+.contact-info-row p {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+/* =========================================
+   MOBILE RESPONSIVENESS (Phones & Tablets)
+   ========================================= */
+
+@media (max-width: 768px) {
+  
+  /* Navbar Adjustments */
+  .navbar {
+    flex-direction: column; /* Stacks the logo and links vertically */
+    padding: 15px 5%;
+    gap: 15px;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    font-size: 0.9rem;
+  }
+
+  /* Hero Section Adjustments */
+  .hero {
+    flex-direction: column; /* Stacks text on top of the image */
+    text-align: center;
+    padding: 40px 5%;
+    gap: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem; /* Scales down the giant text */
+  }
+
+  .hero-content p {
+    margin: 0 auto 30px; /* Centers the paragraph */
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .hero-buttons button {
+    margin: 0;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    animation: none; /* Turns off floating animation on phones to save battery */
+  }
+
+  /* Features & Grid Adjustments */
+  .features {
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 40px 5%;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* Ambiance Adjustments */
+  .ambiance-overlay {
+    padding: 30px 20px;
+    margin: 0 5%;
+  }
+
+  .ambiance-overlay h2 {
+    font-size: 2rem;
+  }
+
+  /* Footer Adjustments */
+  .footer {
+    padding: 50px 5% 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  /* Contact Page Hero */
+  .contact-hero h1 {
+    font-size: 2.8rem;
+  }
+}
